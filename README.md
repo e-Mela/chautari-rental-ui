@@ -1,7 +1,7 @@
 # chautari-rental-web
 This is front-end application for rental service using react and material-UI.
 
-Create React App
+Create React App:
 npx create-react-app chautari-rental-web
 cd my-app
 npm start
