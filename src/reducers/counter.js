@@ -1,0 +1,15 @@
+const counterReducer = (state = 0, action) => {
+    switch(action.type){
+        case "INC" :
+            return state+1;
+        case "DEC" :
+            return state - 1;
+
+        case "RESET" :
+            return state;
+        default : 
+            return state;
+    }
+}
+
+export default counterReducer;

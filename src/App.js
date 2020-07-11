@@ -1,17 +1,18 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './App.css';
 import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import {useSelector, useDispatch} from 'react-redux';
+import {increment, decrement, reset, add, remove} from './actions';
+import User from './components/Contents/User/User';
+import Counter from './components/Contents/Counter/Counter.js';
 
 function App() {
+  
   return (
     <div>
-      <Paper>
-        <Container>
-          <h1>Chautari!!!</h1>
-        </Container>
-      </Paper>
+      <Counter />
+      <User/>      
     </div>
   );
 }

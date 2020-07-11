@@ -83,3 +83,44 @@ Development server Run ng serve for a dev server. Navigate to http://localhost:3
 Making Pull Request Before making pull request, please make sure your code changes pass code analysis and tests. To verify, please run below commands:
 
 npm test
+
+#Redux installation
+-> npm i redux react-redux
+
+#Redux, react-redux, redux-thunk
+
+Can someone clearly explain how control flow happens in redux ? Redux has (always) a single store.
+Whenever you want to replace the state in the store, you dispatch an action.
+
+The action is caught by one or more reducers.
+
+The reducer/s create a new state that combines the old state, and the dispatched action.
+
+The store subscribers are notified that there is a new state.
+
+What are roles of components/containers/actions/action creators/store in redux ?
+Store - holds the state, and when a new action arrives runs the dispatch -> middleware -> reducers pipeline, and notifies subscribers when the state is replaced by a new one.
+
+Components - dumb view parts which are not aware of the state directly. Also know as presentational components.
+
+Containers - pieces of the view that are aware of the state using react-redux. Also known as smart components, and higher order components
+
+Note that containers / smart components vs. dumb components is just a good way to structure your app.
+
+Actions - same as flux - command pattern with type and payload.
+
+Action creators - DRY way of creating actions (not strictly necessary)
+
+Difference between redux/react-redux/redux-thunk/any others ?
+redux - flux like flow with a single store, that can be used in whatever enviroment you like including vanilla js, react, angular 1/2, etc...
+
+react-redux - bindings between redux and react, that creates containers (smart components) that listen to the store's state changes, prepare the props for and rerender the presentational (dumb) components.
+
+redux-thunk - middleware that allows you to write action creators that return a function instead of an action. The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met. Used mainly for async calls to api, that dispatch another action on success / failure.
+
+
+https://redux.js.org/introduction/getting-started
+https://egghead.io/courses/getting-started-with-redux
+https://egghead.io/courses/building-react-applications-with-idiomatic-redux
+https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ntt3yarhm
+
