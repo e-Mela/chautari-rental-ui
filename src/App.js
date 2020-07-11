@@ -4,7 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import {useSelector, useDispatch} from 'react-redux';
 import {increment, decrement, reset, add, remove} from './actions';
-import User from './components/Contents/User/User';
+import User from './components/Contents/User/User.js';
 import Counter from './components/Contents/Counter/Counter.js';
 
 function App() {
