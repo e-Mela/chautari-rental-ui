@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import {useSelector, useDispatch} from 'react-redux';
-import {add, remove} from './../../../actions';
+// import {add, remove} from '../../../../actions';
 
 const User = () => {
     const count = useSelector(state => state.counterReducer);
@@ -12,7 +12,7 @@ const User = () => {
     
     const handleSubmit=(e)=>{
       e.preventDefault();
-      dispatch(add(userRef.current.value));
+      // dispatch(add(userRef.current.value));
       userRef.current.value = "";
     }
   
@@ -29,7 +29,7 @@ const User = () => {
                 users.map((user, index)=>(
                   <li key={index}>
                     {user.name}
-                  <button onClick={()=>dispatch(remove(index))}>Remove</button>
+                  {/* <button onClick={()=>dispatch(remove(index))}>Remove</button> */}
                   </li>    
                               
                 ))}

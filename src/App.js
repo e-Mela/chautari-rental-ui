@@ -4,15 +4,21 @@ import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import {useSelector, useDispatch} from 'react-redux';
 import {increment, decrement, reset, add, remove} from './actions';
-import User from './components/Contents/User/User.js';
-import Counter from './components/Contents/Counter/Counter.js';
+import Header from './components/contents/header/Header.js'
+import Footer from './components/contents/footer/Footer.js';
+import MainContainer from './components/contents/mainContainer/MainContainer.js';
+
 
 function App() {
   
   return (
     <div>
-      <Counter />
-      <User/>      
+      <Container>
+        <Header />
+        <MainContainer />
+        <Footer />
+      </Container>
+                 
     </div>
   );
 }
