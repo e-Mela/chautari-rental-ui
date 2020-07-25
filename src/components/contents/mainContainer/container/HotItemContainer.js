@@ -18,8 +18,6 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: 'nowrap',
         // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
         transform: 'translateZ(0)',
-        width: '100%',
-        padding: '10px',
     },
     title: {
         color: theme.palette.primary.light,
@@ -30,31 +28,31 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const PopularItems = [
+const tileData = [
     {
-        img: 'https://material-ui.com/static/images/grid-list/breakfast.jpg',
-        title: 'Image',
-        author: 'author',
+        img: 'https://material-ui.com/static/images/grid-list/bike.jpg',
+        title: 'Bike',
+        author: 'Suseel',
     },
     {
-        img: "https://material-ui.com/static/images/grid-list/burgers.jpg",
-        title: 'Image',
-        author: 'author',
+        img: "https://material-ui.com/static/images/grid-list/star.jpg",
+        title: 'Star',
+        author: 'not sure',
     },
     {
-        img: 'https://material-ui.com/static/images/grid-list/camera.jpg',
-        title: 'Image',
-        author: 'author',
+        img: 'https://material-ui.com/static/images/grid-list/olive.jpg',
+        title: 'Olive',
+        author: 'Achyut',
     },
     {
-        img: 'https://material-ui.com/static/images/grid-list/morning.jpg',
-        title: 'Image',
-        author: 'author',
+        img: 'https://material-ui.com/static/images/grid-list/mushroom.jpg',
+        title: 'Mushroom',
+        author: 'Nagendra',
     },
     {
-        img: 'https://material-ui.com/static/images/grid-list/morning.jpg',
-        title: 'Image',
-        author: 'author',
+        img: 'https://material-ui.com/static/images/grid-list/plant.jpg',
+        title: 'Plant',
+        author: 'Suseel',
     }
 ];
 
@@ -63,8 +61,8 @@ export default function SingleLineGridList() {
 
     return (
         <div className={classes.root}>
-            <GridList className={classes.gridList} cols={4} spacing={15}>
-                {PopularItems.map((tile) => (
+            <GridList className={classes.gridList} cols={4}>
+                {tileData.map((tile) => (
                     <GridListTile key={tile.img}>
                         <img src={tile.img} alt={tile.title}/>
                         <GridListTileBar

@@ -5,8 +5,6 @@ import {useSelector, useDispatch} from 'react-redux';
 import {increment, decrement} from './../../../actions';
 
 const User = () => {
-  
-      
     return (
       <div>
         <Paper>

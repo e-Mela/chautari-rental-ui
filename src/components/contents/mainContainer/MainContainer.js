@@ -1,31 +1,29 @@
 import React from 'react';
-import Counter from './container/Counter.js';
-import User from './container/User.js';
+import Container from './container/Container.js';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import SideMenu from './sideMenu/SideMenu.js'
+import HotItemContainer from "./container/HotItemContainer";
+import SearchContainer from "./container/SearchContainer";
 
 const MainContainer = () => {
-      
+
     return (
-      <div>
-         <Grid container spacing={3}>       
-          <Grid item xs={12} sm={3}>
-            <Paper>
-              <SideMenu/>
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={9}>
-            <Paper >
-              <h1>Container</h1>
-              <Counter />
-              <User /> 
-            </Paper>
-          </Grid>        
-        </Grid>
-              
-      </div>
+        <div>
+            <SearchContainer/>
+            <Grid>
+                <Paper>
+                    <h6>Most Popular Items</h6>
+                    <Container/>
+                </Paper>
+            </Grid>
+            <Grid>
+                <Paper>
+                    <h6>Hot Items</h6>
+                    <HotItemContainer/>
+                </Paper>
+            </Grid>
+        </div>
     );
-  }
-  
-  export default MainContainer;
+}
+
+export default MainContainer;
