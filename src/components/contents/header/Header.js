@@ -1,11 +1,12 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import LoginModal from "./LoginModal";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,8 +20,21 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+
 export default function ButtonAppBar() {
+    //this.openLoginModel = this.openLoginModel.bind(this);
+    const [render, setRender] = React.useState(false);
+    const [test, setTest] = React.useState("hi");
     const classes = useStyles();
+
+    const openLoginModel = () => {
+        console.log("login clicked")
+        console.log(test)
+        setRender(true)
+        setTest("new hi")
+        console.log("render =" + render)
+        console.log(test)
+    }
 
     return (
         <div className={classes.root}>
@@ -32,7 +46,9 @@ export default function ButtonAppBar() {
                     <Typography variant="h6" className={classes.title}>
                         Chautari
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Button color="inherit" onClick={openLoginModel}>Login
+                        <LoginModal render={render}/>
+                    </Button>
                     <Button color="inherit">Sign Up</Button>
                 </Toolbar>
             </AppBar>
